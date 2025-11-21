@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MCQ App
 
-## Getting Started
+A modern, full-featured Next.js application designed for practicing Multiple Choice Questions (MCQs) for competitive exams like NEET and JEE. Built with performance, accessibility, and a premium user experience in mind.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+-   **Exam-Centric Practice**: Tailored flows for NEET, JEE, and other competitive exams.
+-   **Subject & Topic Organization**: Hierarchical structure (Exam -> Subject -> Topic -> Chapter).
+-   **Interactive Question Types**:
+    -   Single/Multiple Choice
+    -   Match the Following
+    -   Fill in the Blanks
+    -   Assertion-Reasoning
+    -   Numerical Value
+    -   Case Studies
+-   **Rich Content Support**: LaTeX for math equations and image support for diagrams.
+-   **Dark Mode**: Fully supported dark theme with glass-morphism UI.
+-   **Responsive Design**: Mobile-first approach ensuring a great experience on all devices.
+
+## 🛠️ Tech Stack
+
+-   **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Bootstrap 5](https://getbootstrap.com/) & Custom CSS (Glass-morphism)
+-   **Math Rendering**: [KaTeX](https://katex.org/)
+-   **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+-   **State Management**: React Context API
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+-   Node.js 18.17 or later
+-   npm or yarn
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone <repository-url>
+    cd mcq-app
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Environment Setup**
+    Copy the example environment file and update it with your values:
+    ```bash
+    cp .env.example .env
+    ```
+
+4.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📜 Scripts
+
+-   `npm run dev`: Starts the development server with Turbopack.
+-   `npm run build`: Builds the application for production.
+-   `npm start`: Starts the production server.
+-   `npm run lint`: Runs ESLint to check for code quality issues.
+-   `npm run type-check`: Runs TypeScript compiler to check for type errors.
+-   `npm test`: Runs Jest tests.
+
+## 📂 Project Structure
+
+```
+src/
+├── app/                 # Next.js App Router pages and layouts
+├── components/          # Reusable React components
+├── config/              # Application configuration
+├── contexts/            # React Context providers (Theme, Exam, etc.)
+├── data/                # Static data and constants
+├── hooks/               # Custom React hooks
+├── services/            # API services
+├── types/               # TypeScript type definitions
+└── utils/               # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🐳 Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project includes a multi-stage `Dockerfile` optimized for production.
 
-## Learn More
+1.  **Build the image**
+    ```bash
+    docker build -t mcq-app .
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2.  **Run the container**
+    ```bash
+    docker run -p 3000:3000 mcq-app
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The easiest way to deploy is via [Vercel](https://vercel.com/):
 
-## Deploy on Vercel
+1.  Push your code to a Git repository (GitHub, GitLab, BitBucket).
+2.  Import the project into Vercel.
+3.  Vercel will automatically detect Next.js and configure the build settings.
+4.  Add your environment variables in the Vercel dashboard.
+5.  Deploy!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/amazing-feature`).
+3.  Commit your changes (`git commit -m 'Add some amazing feature'`).
+4.  Push to the branch (`git push origin feature/amazing-feature`).
+5.  Open a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
