@@ -3,7 +3,7 @@
 import FilterPanel from "@/components/FilterPanel";
 import { Question } from "./Question";
 import { Question as QuestionType } from "@/types";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 interface QuestionsClientProps {
   initialQuestions: QuestionType[];
@@ -19,7 +19,7 @@ export default function QuestionsClient({
   const [isPanelVisible, setIsPanelVisible] = useState(true);
   const LOAD_MORE_COUNT = 2;
 
-  const handleFilterChange = (filters: {
+  const handleFilterChange = useCallback((filters: {
     subjects: string[];
     topics: string[];
     chapters: string[];
@@ -43,7 +43,7 @@ export default function QuestionsClient({
 
     setFilteredQuestions(filtered);
     setVisibleCount(5); // Reset visible count when filters change
-  };
+  }, [questions]);
 
   const handleLoadMore = () => {
     setVisibleCount((prevCount) => prevCount + LOAD_MORE_COUNT);

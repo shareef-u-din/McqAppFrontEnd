@@ -26,11 +26,13 @@ export interface FilterState {
 interface FilterPanelProps {
   questions: Question[];
   onFilterChange: (filters: FilterState) => void;
+  onVisibilityChange?: (visible: boolean) => void;
 }
 
 export default function FilterPanel({
   questions,
   onFilterChange,
+  onVisibilityChange,
 }: FilterPanelProps) {
   const [selectedFilters, setSelectedFilters] = useState<FilterState>({
     subjects: [],
