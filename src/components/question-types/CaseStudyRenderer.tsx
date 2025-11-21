@@ -21,7 +21,7 @@ export const CaseStudyRenderer: React.FC<CaseStudyRendererProps> = ({
         <div className="card-header bg-primary text-white">
           <h5 className="mb-0">Case Study / Comprehension</h5>
         </div>
-        <div className="card-body bg-light">
+        <div className="card-body">
           <ContentBlockRenderer content={question.question} />
         </div>
       </div>
